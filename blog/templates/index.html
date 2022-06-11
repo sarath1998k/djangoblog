@@ -1,0 +1,81 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block body %}
+
+      <!-- revolution slider -->
+
+      <!-- end revolution slider -->
+      <!-- section --> 
+      <div class="section layout_padding">
+         <div class="container">
+            <div class="row">
+               <div class="col-md-12">
+                  <div class="heading">
+                     <h3>Category<span class="orange_color">List</span></h3>
+                  </div>
+               </div>
+            </div>
+            {% for i in links %}
+            <div class="row margin_top_30">
+               <div class="col-md-6">
+                  <a href="{{i.get_url}}"><img src="{{i.image.url}}" alt="#" /></a>
+               </div>
+               <div class="col-md-6">
+                  <div class="full blog_cont">
+                     <h4>{{i.name}}</h4>
+
+                  </div>
+               </div>
+            </div>
+            {% endfor %}
+
+            <div class="row margin_top_30">
+               <div class="col-md-12">
+                  <div class="button_section full center margin_top_30">
+                     <a style="margin:0;" href="">Read More</a>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- end section -->
+      <!-- section -->
+
+      <!-- end section -->
+      <!-- section --> 
+      <div class="section layout_padding">
+         <div class="container">
+            <div class="row">
+               <div class="col-md-12">
+                  <div class="heading">
+                     <h3>All<span class="orange_color">Blogs</span></h3>
+                  </div>
+               </div>
+            </div>
+            {% for blog in blogs %}
+            <div class="row margin_top_30">
+               <div class="col-md-6">
+                  <a href="{{blog.get_url}}"><img src="{{blog.image.url}}" alt="#" /></a>
+               </div>
+               <div class="col-md-6">
+                  <div class="full blog_cont">
+                     <h4>{{blog.name}}</h4>
+                     <h5>{{blog.created}}</h5>
+                     <h5>{{blog.updated}}</h5>
+                     <p>{{blog.desc|truncatewords:20}}</p>
+                  </div>
+               </div>
+            </div>
+             {% endfor %}
+
+            <div class="row margin_top_30">
+               <div class="col-md-12">
+                  <div class="button_section full center margin_top_30">
+                     <a style="margin:0;" href="">Read More</a>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- end section -->
+{% endblock %}
